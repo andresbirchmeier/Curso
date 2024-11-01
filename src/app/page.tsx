@@ -29,7 +29,7 @@ const HomePage: React.FC = () => {
   };
 
   const handleCreateNew = () => {
-    router.push('/create-playlist');
+    router.push('/playlist/create');
   };
 
   return (
