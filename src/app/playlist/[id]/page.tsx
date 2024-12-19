@@ -57,8 +57,7 @@ const PlaylistDetail: React.FC = () => {
   };
 
   const handleEditPlaylist = () => {
-    console.log('Editing playlist');
-    setShowOptionsMenu(false);
+    router.push(`/playlist/edit/${playlist.id}`); // Redirige a la ruta edit con el ID
   };
 
   const handleDeletePlaylist = () => {
@@ -86,7 +85,7 @@ const PlaylistDetail: React.FC = () => {
             </div>
           </div>
 
-          {/* Three Dots Menu (top right) */}
+          {/* Three Dots Menu */}
           <div
             onClick={handleOptionsClick}
             className='absolute top-0 right-0 cursor-pointer'
@@ -97,7 +96,7 @@ const PlaylistDetail: React.FC = () => {
                 <ul className='space-y-2'>
                   <li>
                     <button
-                      onClick={() => handleEditPlaylist()}
+                      onClick={handleEditPlaylist}
                       className='w-full text-left px-3 py-1 hover:bg-white/10 rounded-md'
                     >
                       Edit Playlist
@@ -105,7 +104,7 @@ const PlaylistDetail: React.FC = () => {
                   </li>
                   <li>
                     <button
-                      onClick={() => handleDeletePlaylist()}
+                      onClick={handleDeletePlaylist}
                       className='w-full text-left px-3 py-1 hover:bg-white/10 rounded-md'
                     >
                       Delete Playlist
@@ -116,64 +115,6 @@ const PlaylistDetail: React.FC = () => {
             )}
           </div>
         </div>
-      </div>
-
-      {/* Search Section */}
-      <div className='bg-gradient-to-r from-green-400 to-fuchsia-500 p-6 rounded-lg mb-8'>
-        <div className='relative'>
-          <input
-            type='text'
-            placeholder='Search songs to add...'
-            value={searchQuery}
-            onChange={(e) => handleSearch(e.target.value)}
-            className='w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:border-white focus:ring-2 focus:ring-white/20'
-          />
-        </div>
-
-        {searchQuery && (
-          <div className='mt-4 bg-white/10 rounded-lg divide-y divide-white/10'>
-            {searchResults.map((song) => (
-              <div
-                key={song.id}
-                className='p-4 flex items-center justify-between hover:bg-white/5 rounded-lg relative'
-                onMouseEnter={() => setShowSongActions(song.id)}
-                onMouseLeave={() => setShowSongActions(null)}
-              >
-                <div className='flex items-center gap-4'>
-                  <div className='w-10 h-10 bg-white/20 rounded flex items-center justify-center'>
-                    🎵
-                  </div>
-                  <div>
-                    <h3 className='font-medium'>{song.title}</h3>
-                    <p className='text-sm text-white/70'>{song.artist}</p>
-                  </div>
-                </div>
-                {showSongActions === song.id && (
-                  <div className='flex gap-2'>
-                    <button
-                      onClick={() => handleSongAction(song.id, 'play')}
-                      className='px-3 py-1 bg-white/10 hover:bg-white/20 rounded-full text-sm transition-colors duration-150'
-                    >
-                      Play Now
-                    </button>
-                    <button
-                      onClick={() => handleSongAction(song.id, 'queue')}
-                      className='px-3 py-1 bg-white/10 hover:bg-white/20 rounded-full text-sm transition-colors duration-150'
-                    >
-                      Add to Queue
-                    </button>
-                    <button
-                      onClick={() => handleSongAction(song.id, 'add')}
-                      className='px-3 py-1 bg-white/10 hover:bg-white/20 rounded-full text-sm transition-colors duration-150'
-                    >
-                      Add to Playlist
-                    </button>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        )}
       </div>
 
       {/* Playlist Songs */}

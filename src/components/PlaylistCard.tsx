@@ -23,6 +23,8 @@ const PlaylistCard: React.FC<PlaylistCardProps> = ({
   const handleCardClick = () => {
     if (!isAddNew) {
       router.push(`/playlist/${playlist.id}`);
+    } else {
+      onCreateNew && onCreateNew();
     }
   };
 
@@ -31,20 +33,6 @@ const PlaylistCard: React.FC<PlaylistCardProps> = ({
       onClick={handleCardClick}
       className='relative bg-gradient-to-r from-green-400 to-fuchsia-500 rounded-lg p-5 text-white shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col justify-between cursor-pointer'
     >
-      {/* <div className="absolute top-2 right-2 bg-red">
-        {!isAddNew && (
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              onDelete?.(playlist.id);
-            }}
-            className="text-white/50 hover:text-white/80 transition-colors duration-300"
-          >
-            <FaEllipsisH size={16} />
-          </button>
-        )}
-      </div> */}
-
       <div>
         <h2 className='text-xl font-semibold mb-2'>
           {isAddNew ? 'Create New Playlist' : playlist.title}
