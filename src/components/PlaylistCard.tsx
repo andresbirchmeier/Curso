@@ -2,19 +2,17 @@
 import { Playlist } from '@/mocks/playlist';
 import React from 'react';
 import { useRouter } from 'next/navigation';
-import { FaPlay, FaTrashAlt, FaPlus, FaEllipsisH } from 'react-icons/fa'; // Asegúrate de tener react-icons instalado
+import { FaPlay, FaPlus } from 'react-icons/fa';
 
 interface PlaylistCardProps {
   playlist: Playlist;
   onPlay?: (id: string) => void;
-  onDelete?: (id: string) => void;
   onCreateNew?: () => void;
 }
 
 const PlaylistCard: React.FC<PlaylistCardProps> = ({
   playlist,
   onPlay,
-  onDelete,
   onCreateNew,
 }) => {
   const router = useRouter();
