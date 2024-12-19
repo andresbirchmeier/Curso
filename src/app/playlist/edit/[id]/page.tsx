@@ -1,7 +1,7 @@
 'use client';
 import { useParams } from 'next/navigation';
 import { allPlaylists } from '@/mocks/playlist';
-import CreatePlaylist from '../../create/page';
+import CreatePlaylist from '@/components/CreatePlaylist';
 
 const EditPlaylistPage = () => {
   const { id } = useParams();

@@ -22,7 +22,7 @@ const PlaylistCard: React.FC<PlaylistCardProps> = ({
     if (!isAddNew) {
       router.push(`/playlist/${playlist.id}`);
     } else {
-      onCreateNew && onCreateNew();
+      if (onCreateNew) onCreateNew();
     }
   };
 

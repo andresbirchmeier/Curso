@@ -3,8 +3,8 @@ export interface Playlist {
   id: string;
   title: string;
   description: string;
-  imageUrl: string;
-  trackCount: number;
+  imageUrl?: string;
+  trackCount?: number;
   duration: string;
   createdBy: string;
   createdDate: string;

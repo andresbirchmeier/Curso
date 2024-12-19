@@ -6,13 +6,12 @@ import { Playlist, allPlaylists } from '@/mocks/playlist';
 import { useRouter } from 'next/navigation';
 
 const HomePage: React.FC = () => {
-  const [playlists, setPlaylists] = useState<Playlist[]>(allPlaylists);
   const [filteredPlaylists, setFilteredPlaylists] =
     useState<Playlist[]>(allPlaylists);
   const router = useRouter();
 
   const handleSearch = (query: string) => {
-    const searchResults = playlists.filter(
+    const searchResults = allPlaylists.filter(
       (playlist) =>
         playlist.title.toLowerCase().includes(query.toLowerCase()) ||
         playlist.description.toLowerCase().includes(query.toLowerCase())
