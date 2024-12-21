@@ -1,5 +1,50 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+# Taller: Git, GitHub y Deploy con Vercel 🚀
+
+En este taller aprenderás a trabajar con Git y GitHub, configurar tu entorno local y desplegar un proyecto en Next.js usando Vercel. Sigue los pasos a continuación para completar el flujo.
+
+---
+
+## **Configuración Inicial de Git**
+
+1. **Instala Git**  
+   - Descarga Git desde [git-scm.com](https://git-scm.com) e instálalo en tu computadora.
+
+2. **Configura tu identidad**  
+   - Ejecuta los siguientes comandos para que tus commits tengan tu información:  
+     ```bash
+     git config --global user.name "Tu Nombre"
+     git config --global user.email "tuemail@ejemplo.com"
+     ```
+
+3. **Verifica la configuración**  
+   - Asegúrate de que la configuración sea correcta con:  
+     ```bash
+     git config --list
+     ```
+
+---
+
+## **Trabajando con el Proyecto**
+
+### **Fork y Clonar el Repositorio**
+
+1. **Haz un fork del repositorio en GitHub**  
+   - Ve al repositorio original y haz clic en el botón **Fork**.  
+   - Esto creará una copia del repositorio en tu cuenta de GitHub.
+
+2. **Clona tu fork en tu máquina local**  
+   - Copia el enlace de tu fork desde GitHub.  
+   - En tu terminal, ejecuta:  
+     ```bash
+     git clone <URL-de-tu-repositorio>
+     ```
+
+3. **Navega a la carpeta del proyecto**  
+   ```bash
+   cd nombre-del-proyecto
+
 ## Getting Started
 
 First, run the development server:
