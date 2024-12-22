@@ -92,7 +92,7 @@ const PlaylistDetail: React.FC = () => {
             >
               <FaEllipsisV size={24} color='white' />
               {showOptionsMenu && (
-                <div className='absolute top-8 right-0 bg-white/10 text-white p-2 w-40 rounded-lg shadow-lg'>
+                <div className='absolute top-8 right-0 bg-white/50 text-white p-2 w-40 rounded-lg shadow-lg'>
                   <ul className='space-y-2'>
                     <li>
                       <button
