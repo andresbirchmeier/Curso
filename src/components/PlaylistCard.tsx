@@ -45,7 +45,7 @@ const PlaylistCard: React.FC<PlaylistCardProps> = ({
         {isAddNew ? (
           <button
             onClick={onCreateNew}
-            className='flex items-center justify-center bg-white/10 text-white font-medium rounded-full p-4 hover:bg-white/20 transition-colors duration-300'
+            className='flex items-center justify-center bg-white/10 text-white font-medium rounded-full p-4 hover:bg-emerald-400 transition-colors duration-300'
           >
             <FaPlus size={24} />
           </button>
